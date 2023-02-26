@@ -34,7 +34,8 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
+	/* TODO - look for fix for https://github.com/Andy-set-studio/modern-css-reset/issues/50 */
+	/* min-height: 100vh; */
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
