@@ -96,8 +96,6 @@
 		};
 	}}
 >
-	<a class="how-to-play" href="/sverdle/how-to-play">How to play</a>
-
 	<div class="grid" class:playing={!won} class:bad-guess={form?.badGuess}>
 		{#each Array(6) as _, row}
 			{@const current = row === i}
@@ -185,27 +183,6 @@
 		justify-content: center;
 		gap: 1rem;
 		flex: 1;
-	}
-
-	.how-to-play {
-		color: var(--color-text);
-	}
-
-	.how-to-play::before {
-		content: 'i';
-		display: inline-block;
-		font-size: 0.8em;
-		font-weight: 900;
-		width: 1em;
-		height: 1em;
-		padding: 0.2em;
-		line-height: 1;
-		border: 1.5px solid var(--color-text);
-		border-radius: 50%;
-		text-align: center;
-		margin: 0 0.5em 0 0;
-		position: relative;
-		top: -0.05em;
 	}
 
 	.grid {
