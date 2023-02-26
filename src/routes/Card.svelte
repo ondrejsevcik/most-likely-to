@@ -12,7 +12,7 @@
 <style>
 	.card {
 		border-radius: 10px;
-		background-color: white;
+		background-color: var(--color-orange);
 		color: var(--color-text-dark);
 
 		display: flex;
