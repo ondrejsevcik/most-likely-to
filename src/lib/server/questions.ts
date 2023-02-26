@@ -1,3 +1,4 @@
+// TODO remove - not safe for work questions
 export const questions = [
 	'Most likely to adopt a (new) pet',
 	'Most likely to argue with someone',

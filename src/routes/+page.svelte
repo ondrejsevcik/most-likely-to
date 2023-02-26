@@ -1,22 +1,12 @@
-<script>
-	import Counter from './Counter.svelte';
+<script lang="ts">
+	import Card from './Card.svelte';
+	import type { PageServerData } from './$types';
+
+	export let data: PageServerData;
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Most Likey To</title>
 </svelte:head>
 
-<section>
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-</style>
+<Card question={data.question.text} />
