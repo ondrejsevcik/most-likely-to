@@ -15,7 +15,6 @@
 		border-radius: 10px;
 
 		max-width: 320px;
-		height: 100vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
