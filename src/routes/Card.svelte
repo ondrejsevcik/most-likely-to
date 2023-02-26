@@ -1,11 +1,12 @@
 <script lang="ts">
 	export let question: string;
+	export let onNextClick: () => void;
 </script>
 
 <div class="card">
 	<p class="question">{question}</p>
 
-	<button class="btn-next">See next</button>
+	<button class="btn-next" on:click={onNextClick}>See next</button>
 </div>
 
 <style>
