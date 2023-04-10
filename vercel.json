@@ -1,7 +1,7 @@
 {
 	"rewrites": [
 		{
-			"source": "hello.js",
+			"source": "/hello.js",
 			"destination": "https://plausible.io/js/script.js"
 		},
 		{
