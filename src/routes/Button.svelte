@@ -2,31 +2,20 @@
 	export let onClick: () => void;
 </script>
 
-<div class="main">
-	<button on:click={onClick}><slot /></button>
-</div>
+<button on:click={onClick}>
+	<slot />
+</button>
 
 <style>
 	:root {
 		--shadow-size: 6px;
 	}
 
-	.main {
-		box-shadow: var(--shadow-size) var(--shadow-size) 0 0;
-		transition: 0.3s;
-	}
-
-	.main::after {
-		content: '';
-		top: 0;
-		left: 0;
-		transition: 0.3s;
-	}
-
 	button {
 		border: 2px solid var(--color-text-dark);
 		background-color: white;
 		color: var(--color-text-dark);
+		box-shadow: var(--shadow-size) var(--shadow-size) 0 0;
 
 		font-family: Inter;
 		font-weight: 600;
@@ -41,5 +30,6 @@
 
 	button:active {
 		transform: translateX(var(--shadow-size)) translateY(var(--shadow-size));
+		box-shadow: 0 0 0 0;
 	}
 </style>
