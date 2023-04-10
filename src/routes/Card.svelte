@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from './Button.svelte';
+
 	export let question: string;
 	export let onNextClick: () => void;
 </script>
@@ -6,7 +8,7 @@
 <div class="card">
 	<p class="question">{question}</p>
 
-	<button class="btn-next" on:click={onNextClick}>See next</button>
+	<Button onClick={onNextClick}>See next</Button>
 </div>
 
 <style>
@@ -45,19 +47,5 @@
 			/* TODO use variable fonts */
 			font-size: 2rem;
 		}
-	}
-
-	.btn-next {
-		border: 2px solid var(--color-text-dark);
-		background-color: white;
-		color: var(--color-text-dark);
-
-		font-family: Inter;
-		font-weight: 600;
-		font-size: 20px;
-		line-height: 1.2;
-		text-transform: uppercase;
-
-		padding: 1rem;
 	}
 </style>
