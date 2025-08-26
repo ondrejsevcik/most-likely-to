@@ -5,6 +5,7 @@
 		"node": "18.x"
 	},
 	"type": "module",
+	"packageManager": "npm@10.8.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
