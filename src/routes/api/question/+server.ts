@@ -6,7 +6,7 @@ function randomInt(min: number, max: number): number {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export const GET = (({ url }) => {
+export const GET = (() => {
 	const index = randomInt(0, questions.length - 1);
 
 	return json({
