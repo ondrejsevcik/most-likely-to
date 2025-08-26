@@ -8,12 +8,12 @@ Always reference these instructions first and fallback to search or bash command
 
 ### Environment Requirements
 
-- **CRITICAL**: Node.js version conflicts exist. The app requires Node 22.x (package.json) but Vercel adapter only supports Node 16-18, causing production build failures.
-- Use Node.js 20.19.4+ for development (works fine despite package.json warning).
+- Node.js 20.19.4+ recommended for development
+- The app is configured for Node 22.x as specified in package.json
 
 ### Bootstrap and Development Setup
 
-- Install dependencies: `npm install --legacy-peer-deps` -- REQUIRED due to Vite version conflicts. Takes ~8-45 seconds depending on cache. NEVER CANCEL. Set timeout to 90+ seconds.
+- Install dependencies: `npm install` -- takes ~8-45 seconds depending on cache. Set timeout to 90+ seconds.
 - Start development server: `npm run dev` -- starts in ~1.3 seconds, serves on http://localhost:5173/. Set timeout to 30+ seconds.
 - TypeScript checking: `npm run check` -- takes ~5 seconds. Set timeout to 30+ seconds.
 
@@ -25,10 +25,10 @@ Always reference these instructions first and fallback to search or bash command
 
 ### Build and Test Status
 
-- **CRITICAL**: `npm run build` -- FAILS due to Node.js version incompatibility with Vercel adapter. Do NOT attempt to fix this by changing Node versions.
-- **CRITICAL**: `npm run test` (Playwright) -- FAILS because it depends on production build.
-- **CRITICAL**: `npm run test:unit` (Vitest) -- No unit tests exist, exits with code 1.
-- Use development server for all testing and validation.
+- `npm run build` -- builds the production application successfully. Takes ~30-60 seconds. Set timeout to 120+ seconds.
+- `npm run test` (Playwright) -- runs end-to-end tests. Takes ~10-30 seconds. Set timeout to 60+ seconds.
+- `npm run test:unit` (Vitest) -- runs unit tests if available. Takes ~5-15 seconds. Set timeout to 30+ seconds.
+- Use `npm run dev` for development with hot reload capabilities.
 
 ## Validation
 
@@ -80,7 +80,7 @@ src/
 - `src/lib/server/questions.ts` - Contains ~300 "Most likely to..." questions. Edit here to add/modify questions.
 - `src/routes/api/question/+server.ts` - API endpoint that returns random questions. Simple implementation using Math.random().
 - `src/routes/+page.svelte` - Main page that fetches initial question and handles "See next" functionality.
-- `package.json` - Specifies Node 22.x but use 20.19.4+ in development.
+- `package.json` - Specifies Node 22.x for the production environment.
 
 ### Working with Questions
 
@@ -100,29 +100,31 @@ src/
 - `.eslintrc.cjs` - ESLint config for TypeScript and Svelte
 - `.prettierrc` - Code formatting (uses tabs, single quotes)
 - `svelte.config.js` - SvelteKit config with Vercel adapter
-- `playwright.config.ts` - E2E test config (currently non-functional)
+- `playwright.config.ts` - E2E test configuration
 - `vite.config.ts` - Build tool configuration
 
 ## Troubleshooting
 
 ### Common Issues
 
-- **Build failures**: Expected due to Node.js version conflicts. Use development mode only.
-- **Dependency conflicts**: Always use `npm install --legacy-peer-deps` flag.
-- **Test failures**: Expected due to build dependency. Focus on manual testing.
-- **ESLint warnings**: May show unused variable warnings - these are acceptable.
+- **Dependency updates**: Run `npm install` when package.json changes
+- **Cache issues**: Clear npm cache with `npm cache clean --force` if installation issues occur
+- **Port conflicts**: Default dev server runs on port 5173, change in vite.config.ts if needed
+- **ESLint warnings**: May show unused variable warnings - these are acceptable
 
 ### Development Workflow
 
 1. Make code changes
 2. Verify dev server auto-reloads properly
-3. Manually test application functionality
+3. Run tests to ensure functionality: `npm run test` and `npm run test:unit`
 4. Run `npm run lint` and `npm run format`
-5. Commit changes
+5. Build for production: `npm run build`
+6. Commit changes
 
-### Never Do These Things
+### Best Practices
 
-- DO NOT try to fix the Node.js version conflicts by changing versions
-- DO NOT attempt to run production builds or Playwright tests
-- DO NOT add new build tools or dependencies without understanding version conflicts
-- DO NOT skip manual testing - it's the primary validation method
+- Always test your changes both in development and with a production build
+- Use TypeScript checking with `npm run check` before committing
+- Follow the existing code style and formatting conventions
+- Test both desktop and mobile responsive layouts
+- Verify API endpoints work correctly with manual testing
