@@ -1,22 +1,26 @@
-# create-svelte
+# Most Likely To
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A digital version of the popular party game "Most Likely To" where players are presented with fun scenarios and questions to spark conversation and laughter.
 
-## Creating a project
+## About the Game
 
-If you're seeing this, you've probably already done this step. Congrats!
+"Most Likely To" is a social party game where players read scenarios and decide which person in the group is most likely to do that particular thing. This web application provides an endless collection of "Most Likely To" questions that you can use at parties, gatherings, or just for fun with friends.
+
+## About This Project
+
+This is a simple, clean web application that randomly displays "Most Likely To" questions. Click "See next" to get a new random question from our collection of scenarios.
+
+## Getting Started
+
+To run this project locally, first install the dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've installed dependencies, start a development server:
 
 ```bash
 npm run dev
