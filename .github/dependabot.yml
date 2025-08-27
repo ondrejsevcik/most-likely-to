@@ -3,5 +3,11 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'monthly'
     open-pull-requests-limit: 10
+    groups:
+      svelte:
+        patterns:
+          - 'svelte'
+          - '@sveltejs/*'
+          - '*svelte*'
