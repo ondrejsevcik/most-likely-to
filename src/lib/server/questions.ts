@@ -1,4 +1,4 @@
-// TODO remove - not safe for work questions
+// Questions for the "Most Likely To" game
 export const questions = [
 	'Most likely to adopt a (new) pet',
 	'Most likely to argue with someone',
@@ -93,12 +93,10 @@ export const questions = [
 	'Most likely to never pay back the money you borrowed them',
 	'Most likely to not finish a new project',
 	'Most likely to not take a shower for a week',
-	'Most likely to pay for sex',
 	'Most likely to pee in the shower',
 	"Most likely to pet a stranger's dog",
 	'Most likely to play by the rules',
 	'Most likely to puke when drunk ',
-	'Most likely to record themselves while having sex',
 	'Most likely to show up early to something',
 	'Most likely to show up late',
 	'Most likely to sing in the shower',
@@ -137,7 +135,6 @@ export const questions = [
 	'Most likely to be clumsy ',
 	'Most likely to forget their own birthday',
 	'Most likely to eat bugs',
-	'Most likely to have the highest body count ',
 	'Most likely to go to the gym',
 	'Most likely to become a race car driver',
 	'Most likely to win a Nobel prize',
@@ -148,7 +145,6 @@ export const questions = [
 	'Most likely to sing ',
 	'Most likely to learn to play an instrument ',
 	'Most likely to get arrested ',
-	'Most likely to commit tax fraud',
 	'Most likely to get into crypto',
 	'Most likely to join the army',
 	'Most likely to get pregnant',

@@ -1,6 +1,14 @@
-# create-svelte
+# Most Likely To
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A fun party game web application built with SvelteKit. Players answer "Most likely to..." questions about each other.
+
+## Security Notice
+
+⚠️ **Before deploying**: This app includes analytics tracking. You must:
+
+1. Replace `YOUR_DOMAIN_HERE` in `src/app.html` with your domain
+2. Review `vercel.json` analytics configuration
+3. See [SECURITY.md](./SECURITY.md) for complete security guidelines
 
 ## Creating a project
 
