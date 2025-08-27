@@ -34,7 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter": "^4.5.15",
+		"@fontsource/inter": "^5.2.6",
 		"@fontsource/raleway": "^4.5.12"
 	}
 }
