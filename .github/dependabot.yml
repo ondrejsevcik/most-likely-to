@@ -3,11 +3,67 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'quarterly'
     open-pull-requests-limit: 10
     groups:
-      svelte:
+      # Svelte ecosystem - minor and patch updates only
+      # Major @sveltejs/kit and svelte updates will be standalone
+      svelte-ecosystem:
         patterns:
-          - 'svelte'
-          - '@sveltejs/*'
-          - '*svelte*'
+          - '@sveltejs/adapter-*'
+          - '@sveltejs/vite-plugin-*'
+          - 'svelte-*'
+        exclude-patterns:
+          - '@sveltejs/kit' # Keep SvelteKit as standalone for major updates
+          - 'svelte' # Keep core Svelte as standalone for major updates
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      # Development tools - linting, formatting, build tools
+      dev-tools:
+        patterns:
+          - '@eslint/*'
+          - 'eslint*'
+          - 'prettier*'
+          - 'vite'
+          - 'vitest'
+          - 'globals'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      # Testing frameworks and tools
+      testing:
+        patterns:
+          - '@playwright/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      # Font packages
+      fonts:
+        patterns:
+          - '@fontsource/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      # TypeScript ecosystem - minor and patch only
+      # Major TypeScript updates will be standalone
+      typescript-minor:
+        patterns:
+          - '@typescript-eslint/*'
+          - '@types/*'
+          - 'tslib'
+        exclude-patterns:
+          - 'typescript' # Keep TypeScript major updates standalone
+        update-types:
+          - 'minor'
+          - 'patch'
+
+    # Critical dependencies that should always get standalone updates:
+    # - svelte (core framework)
+    # - @sveltejs/kit (major framework)
+    # - typescript (can have breaking changes)
+    # - Any major version updates of grouped packages will also be standalone
