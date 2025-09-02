@@ -25,16 +25,6 @@ updates:
           - 'vitest'
           - 'globals'
 
-      # Testing frameworks and tools
-      testing:
-        patterns:
-          - '@playwright/*'
-
-      # Font packages
-      fonts:
-        patterns:
-          - '@fontsource/*'
-
       # TypeScript ecosystem
       typescript-minor:
         patterns:
