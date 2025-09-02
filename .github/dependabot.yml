@@ -3,11 +3,32 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'monthly'
+      interval: 'quarterly'
     open-pull-requests-limit: 10
     groups:
-      svelte:
+      # Svelte ecosystem
+      svelte-ecosystem:
         patterns:
+          - '@sveltejs/adapter-*'
+          - '@sveltejs/vite-plugin-*'
+          - 'svelte-*'
+          - '@sveltejs/kit'
           - 'svelte'
-          - '@sveltejs/*'
-          - '*svelte*'
+
+      # Development tools - linting, formatting, build tools
+      dev-tools:
+        patterns:
+          - '@eslint/*'
+          - 'eslint*'
+          - 'prettier*'
+          - 'vite'
+          - 'vitest'
+          - 'globals'
+
+      # TypeScript ecosystem
+      typescript-minor:
+        patterns:
+          - '@typescript-eslint/*'
+          - '@types/*'
+          - 'tslib'
+          - 'typescript'
