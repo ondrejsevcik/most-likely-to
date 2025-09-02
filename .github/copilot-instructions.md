@@ -7,18 +7,20 @@ Most Likely To is a digital version of the popular party game where players are 
 ## Working Effectively
 
 ### Initial Setup
+
 Run these commands to set up the development environment:
 
 ```bash
-npm install  # Takes ~15 seconds. Node.js 22.x required but works with 20.x+ with warnings
-npm run check  # Type checking - takes ~4 seconds
-npm run lint  # Code linting and formatting check - takes ~2 seconds
-npm run build  # Production build - takes ~4 seconds. NEVER CANCEL.
+npm install  # Node.js 22.x required but works with 20.x+ with warnings
+npm run check  # Type checking
+npm run lint  # Code linting and formatting check
+npm run build  # Production build - NEVER CANCEL.
 ```
 
 **CRITICAL**: All builds and tests complete quickly (under 15 seconds). No long timeouts needed.
 
 ### Development Workflow
+
 - Start development server: `npm run dev` - opens at http://localhost:5173/
 - Build for production: `npm run build` - creates optimized build in `.svelte-kit/output/`
 - Preview production build: `npm run preview` - serves at http://localhost:4173/
@@ -28,6 +30,7 @@ npm run build  # Production build - takes ~4 seconds. NEVER CANCEL.
 - Run unit tests: `npm run test:unit` (currently no unit tests exist)
 
 ### Validation Requirements
+
 **ALWAYS manually test any changes by running the application and exercising the user flow:**
 
 1. Start dev server: `npm run dev`
@@ -37,6 +40,7 @@ npm run build  # Production build - takes ~4 seconds. NEVER CANCEL.
 5. Verify the application is responsive and styled correctly
 
 **ALWAYS run formatting and linting before committing:**
+
 ```bash
 npm run format  # Auto-fix formatting issues
 npm run lint    # Verify code style and lint rules
@@ -45,6 +49,7 @@ npm run lint    # Verify code style and lint rules
 ## Key Project Structure
 
 ### Source Code Layout
+
 ```
 src/
 ├── routes/                    # SvelteKit pages and components
@@ -62,6 +67,7 @@ src/
 ```
 
 ### Key Files and Their Purpose
+
 - `src/lib/server/questions.ts` - Contains 345 "Most Likely To" questions as a TypeScript array
 - `src/routes/api/question/+server.ts` - API endpoint that returns random questions
 - `src/routes/+page.svelte` - Main page that displays questions and handles "See next" clicks
@@ -74,24 +80,29 @@ src/
 ## Common Tasks and Troubleshooting
 
 ### Adding New Questions
+
 Edit `src/lib/server/questions.ts` and add new strings to the `questions` array. Each question should start with "Most likely to".
 
 ### Playwright Testing Issues
+
 - **Browser installation required**: Run `npx playwright install` before first test run
 - **Installation may fail**: Network issues can cause browser download failures - document as "test requires manual browser installation"
 - **Test command**: `npm run test` runs the single E2E test that verifies homepage loads
 
 ### Build and Deployment
+
 - **Vercel deployment**: Configured via `svelte.config.js` with `@sveltejs/adapter-vercel`
-- **Production build**: Always test with `npm run build && npm run preview` 
+- **Production build**: Always test with `npm run build && npm run preview`
 - **No CI/CD**: Only dependabot.yml exists for dependency updates
 
 ### Node.js Version Requirements
+
 - **Specified**: Node.js 22.x in package.json engines
 - **Actual compatibility**: Works with Node.js 20.x+ (shows engine warnings but functions normally)
 - **Package manager**: npm 11.5.2 specified but works with npm 10.x+
 
 ### Code Style and Formatting
+
 - **Prettier configuration**: Uses tabs, single quotes, no trailing commas
 - **ESLint**: Configured for TypeScript and Svelte with recommended rules
 - **Warnings**: Prettier shows "Ignored unknown option" warnings but still works correctly
