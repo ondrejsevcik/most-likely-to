@@ -7,15 +7,13 @@ updates:
     open-pull-requests-limit: 10
     groups:
       # Svelte ecosystem
-      # @sveltejs/kit and svelte updates will be standalone
       svelte-ecosystem:
         patterns:
           - '@sveltejs/adapter-*'
           - '@sveltejs/vite-plugin-*'
           - 'svelte-*'
-        exclude-patterns:
-          - '@sveltejs/kit' # Keep SvelteKit as standalone
-          - 'svelte' # Keep core Svelte as standalone
+          - '@sveltejs/kit'
+          - 'svelte'
 
       # Development tools - linting, formatting, build tools
       dev-tools:
@@ -38,16 +36,11 @@ updates:
           - '@fontsource/*'
 
       # TypeScript ecosystem
-      # TypeScript compiler updates will be standalone
       typescript-minor:
         patterns:
           - '@typescript-eslint/*'
           - '@types/*'
           - 'tslib'
-        exclude-patterns:
-          - 'typescript' # Keep TypeScript compiler standalone
+          - 'typescript'
 
-    # Critical dependencies that should always get standalone updates:
-    # - svelte (core framework)
-    # - @sveltejs/kit (major framework)
-    # - typescript (can have breaking changes)
+
