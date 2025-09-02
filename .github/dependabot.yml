@@ -32,5 +32,3 @@ updates:
           - '@types/*'
           - 'tslib'
           - 'typescript'
-
-
